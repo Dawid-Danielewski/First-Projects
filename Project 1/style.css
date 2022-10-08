@@ -22,6 +22,21 @@ a {
     justify-content: center;
 }
 
+img {
+   height: 100%;
+   width: 100%;
+   object-fit: cover;
+}
+
+p {
+   color: black;
+   font-size: 1.4rem;
+   font-weight: 300;
+   margin-top: 5px;
+   letter-spacing: 0.05rem;
+   line-height: 2.5rem;
+}
+
 /* Hero Section */
 #hero {
     background-image: url(./img/hero-bg.jpg);
@@ -58,6 +73,7 @@ a {
  }
 
  #hero h1:nth-child(3) {
+   animation: text_reveal_name .5s ease forwards;
     animation-delay: 3s;
  }
 
@@ -95,6 +111,7 @@ a {
 
  #hero h1:nth-child(3) span {
     animation-delay: 2.5s;
+   
     
  }
 
@@ -102,7 +119,8 @@ a {
     padding: 10px 30px;
     font-size: 2rem;
     display: inline-block;
-    color: crimson;
+    color: white;
+    font-weight: bold;
     border: 2px solid crimson;
     margin-top: 30px;
     text-transform: uppercase;
@@ -116,7 +134,99 @@ a {
     background-color: crimson;
  }
 
-/* Hero Section */
+/* End Hero Section */
+
+/* Services Section */
+
+#services {
+
+}
+
+#services .service {
+   flex-direction: column;
+   text-align: center;
+   padding: 100px 0;
+   margin: 0 auto;
+   max-width: 1500px;
+
+}
+
+.section-title {
+   font-size: 4rem;
+   font-weight: 300;
+   text-align: center;
+   color:  black;
+   margin-bottom: 10px;
+   letter-spacing: 0.2rem;
+   text-transform: uppercase;
+}
+
+#services .section-title span{
+   color: crimson;
+}
+
+
+
+#services .service-bottom {
+   display: flex;
+   text-align: center;
+   justify-content: center;
+   flex-wrap: wrap;
+   margin-top: 50px;
+}
+
+#services .service-item {
+   flex-basis: 80%;
+   flex-direction: column;
+   align-items: flex-start;
+   display: flex;
+   justify-content: center;
+   padding: 30px;
+   margin: 10px 5%;
+   background-image: url(./img/img-1.jpg);
+   background-size: cover;
+   position: relative;
+   z-index: 1;
+   overflow: hidden;
+   border-radius: 10px;
+}
+
+#services .service-item::after{
+   content: '';
+   position: absolute;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100%;
+   z-index: -1;
+   opacity: 0.6;
+   background-image: linear-gradient(60deg, #29323c 0%, #485563 100%);
+}
+
+#services .service-bottom .icon {
+   height: 80px;
+   width: 80px;
+   margin-bottom: 20px;
+}
+
+#services .service-bottom h2 {
+   font-size: 2rem;
+   color: white;
+   text-transform: uppercase;
+   margin-bottom: 10px;
+}
+
+#services .service-item p{
+   color: white;
+   text-align: left;
+   font-weight: 300;
+   line-height: 2rem;
+}
+
+
+
+
+/* End Services Section */
 
 /* Keyframes */
 @keyframes text_reveal_box {
@@ -134,6 +244,13 @@ a {
     100% {
         color: white;
     }
+}
+
+@keyframes text_reveal_name {
+   100% {
+       color: crimson;
+       font-weight: bolder;
+   }
 }
 
 /* Keyframes */
