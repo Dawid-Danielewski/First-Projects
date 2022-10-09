@@ -37,6 +37,25 @@ p {
    line-height: 2.5rem;
 }
 
+.cta {
+   padding: 10px 30px;
+   font-size: 2rem;
+   display: inline-block;
+   color: white;
+   font-weight: bold;
+   border: 2px solid crimson;
+   margin-top: 30px;
+   text-transform: uppercase;
+   letter-spacing: .1rem;
+   background-color: transparent;
+   transition: 0.4s ease;
+}
+
+.cta:hover {
+   color: white;
+   background-color: crimson;
+}
+
 .section-title {
    font-size: 4rem;
    font-weight: 300;
@@ -128,24 +147,7 @@ p {
     
  }
 
- .cta {
-    padding: 10px 30px;
-    font-size: 2rem;
-    display: inline-block;
-    color: white;
-    font-weight: bold;
-    border: 2px solid crimson;
-    margin-top: 30px;
-    text-transform: uppercase;
-    letter-spacing: .1rem;
-    background-color: transparent;
-    transition: 0.4s ease;
- }
 
- .cta:hover {
-    color: white;
-    background-color: crimson;
- }
 
 /* End Hero Section */
 
@@ -304,6 +306,69 @@ position: relative;
 
 
 /* End Projects Section */
+
+/* About Section */
+#about .about {
+   display: flex;
+   flex-direction:column-reverse;
+   max-width: 1200px;
+   padding: 100px 20px;
+   margin: 0 auto;
+   text-align: center;
+}
+
+#about .col-left {
+   width: 250px;
+   height: 360px;
+}
+
+#about .col-right {
+   width: 100%;
+}
+
+#about .col-right h2 {
+   font-size: 1.8rem;
+   letter-spacing: .2;
+   font-weight: 700;
+   margin-bottom: 10px;
+}
+
+#about .col-right p {
+   margin-bottom: 20px;
+}
+
+#about .col-right .cta {
+   color: black;
+   margin-bottom: 50px;
+   padding: 10px 20px;
+   font-size: 2rem;
+
+}
+
+#about .col-right .cta:hover {
+   color: white;
+}
+
+#about .col-left .about-img {
+   position: relative;
+   border: solid 10px white;
+   height: 100%;
+   width: 100%;
+}
+
+#about .col-left .about-img::after {
+   content: '';
+   top: 19px;
+   left: -33px;
+   position: absolute;
+   height: 98%;
+   width: 98%;
+   border: solid 7px crimson;
+   z-index: -1;
+}
+
+
+/* End About Section */
 
 /* Keyframes */
 @keyframes text_reveal_box {
