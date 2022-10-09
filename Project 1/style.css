@@ -37,6 +37,17 @@ p {
    line-height: 2.5rem;
 }
 
+.brand {
+   font-size: 2rem;
+   text-transform: uppercase;
+   color: white;
+
+}
+
+.brand span {
+   color: crimson;
+}
+
 .cta {
    padding: 10px 30px;
    font-size: 2rem;
@@ -416,6 +427,51 @@ margin-left: 70px;
 
 
 /* End Contact Section */
+
+/* Footer Section */
+
+#footer {
+   background-image: linear-gradient(60deg, #29323c 0%, #485563 100%);
+}
+#footer .footer {
+   flex-direction: column;
+   min-height: 200px;
+   padding: 50px 0 10px 0px;
+}
+
+#footer h2 {
+   font-size: 1.8rem;
+   letter-spacing: .1rem;
+   color: white;
+   font-weight: 500;
+   margin: 10px 0px 10px 0;
+}
+
+#footer .footer .social-icons{
+display: flex;
+margin-bottom: 30px;
+}
+
+#footer .social-item {
+   width: 50px;
+   height: 50px;
+   margin: 0 10px;
+}
+
+#footer .social-item img {
+   filter: grayscale(1);
+   transition: 0.3s ease filter;
+}
+
+#footer .social-item:hover img {
+   filter: grayscale(0);
+}
+
+#footer p {
+   color: white;
+   font-size: 1.3rem;
+}
+/* End Footer Section */
 
 
 /* Keyframes */
