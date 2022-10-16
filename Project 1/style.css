@@ -8,6 +8,7 @@
 html {
     font-size: 10px;
     font-family: 'Montserrat', sans-serif;
+    scroll-behavior: smooth;
 }
 
 a {
@@ -95,11 +96,12 @@ p {
 #header .header {
    background-color: rgba(31, 30, 30, 0.24);
    min-height: 8vh;
+   transition: 0.5s ease background-color;
 }
 
 #header .nav-list ul {
    list-style: none;
-   left: 0;
+   left: 100%;
    top: 0;
    background-color: rgba(31,30,30);
    width: 100vw;
@@ -111,6 +113,7 @@ p {
    justify-content: center;
    z-index: 1;
    overflow-x: hidden;
+   transition: 0.6s ease left;
 }
 
 #header .nav-list ul a {
@@ -141,6 +144,10 @@ text-decoration: none;
    letter-spacing: initial;
 }
 
+#header .nav-list ul li:hover a {
+   color: crimson;
+}
+
 #header .hamburger {
    height: 60px;
    width: 60px;
@@ -153,7 +160,18 @@ text-decoration: none;
    align-items: center;
    justify-content: center;
    cursor: pointer;
-   margin-right: 20px;
+   margin-right: 40px;
+   transform: scale(0.8);
+}
+
+#header .hamburger::after{
+   content: '';
+   position: absolute;
+   height: 100%;
+   width: 100%;
+   border-radius: 50%;
+   border: 3px solid white;
+   animation: hamburger_puls 1s ease infinite;
 }
 
 #header .hamburger .bar {
@@ -172,7 +190,7 @@ text-decoration: none;
    width: 100%;
    left: 0;
    background-color: white;
-   transition: 0.3 ease;
+   transition: 0.3s ease;
    transition-property: top, bottom;
 }
 
@@ -184,6 +202,18 @@ text-decoration: none;
    bottom: 8px;
 }
 
+#header .hamburger.active .bar::before{
+   bottom: 0;
+}
+
+
+#header .hamburger.active .bar::after {
+   top: 0;
+}
+
+#header .nav-list ul.active {
+   left: 0;
+}
 
 
 
@@ -601,6 +631,18 @@ margin-bottom: 30px;
 
 
 /* Keyframes */
+@keyframes hamburger_puls {
+   0% {
+      opacity: 1;
+      transform: scale(1);
+   }
+
+   100% {
+      opacity: 0;
+      transform: scale(1.5);
+   }
+}
+
 @keyframes text_reveal_box {
     50% {
         width: 100%;
@@ -750,6 +792,35 @@ margin-bottom: 30px;
 
 /* Media Query for desktop */
 @media only screen and (min-width: 1200px) {
+/*header section*/
+#header .hamburger{
+   display: none;
+}
+ 
+
+#header .nav-list ul{
+   position: initial;
+   display: block;
+   height: auto;
+   width: fit-content;
+   background-color: transparent;
+   margin-right: auto;
+}
+
+#header .nav-list ul a::after{
+   display: none;
+}
+
+#header .nav-list ul li{
+   display: inline-block;
+}
+
+#header .nav-list ul li a{
+   font-size: 1.8rem;
+}
+
+/*header section*/
+
    /* servie section */
    #services .service-bottom .service-item {
       flex-basis: 22%;
